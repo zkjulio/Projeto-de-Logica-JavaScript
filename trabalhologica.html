@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<!--Nome e Matrícula
+Júlio Costa Moraes Neto / 2327091-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Salários e Benefícios</title>
+    <script>
+        function calcularNovoSalario() {
+            var salarioAtual = parseFloat(prompt("Digite o salário atual do funcionário:"));
+            if (isNaN(salarioAtual)) {
+                alert("Por favor, insira um valor válido.");
+                return;
+            }
+
+            var novoSalario;
+            if (salarioAtual <= 1200) {
+                novoSalario = salarioAtual * 1.15;
+            } else if (salarioAtual <= 2400) {
+                novoSalario = salarioAtual * 1.1;
+            } else {
+                novoSalario = salarioAtual * 1.05;
+            }
+
+            alert("O novo salário é: R$ " + novoSalario.toFixed(2));
+        }
+
+        function calcularValorFerias() {
+            var salarioAtual = parseFloat(prompt("Digite o salário atual do funcionário:"));
+            if (isNaN(salarioAtual)) {
+                alert("Por favor, insira um valor válido.");
+                return;
+            }
+
+            var valorFerias = salarioAtual + (salarioAtual / 3);
+            alert("O valor das férias é: R$ " + valorFerias.toFixed(2));
+        }
+
+        function calcularDecimoTerceiro() {
+            var salarioAtual = parseFloat(prompt("Digite o salário atual do funcionário:"));
+            if (isNaN(salarioAtual)) {
+                alert("Por favor, insira um valor válido.");
+                return;
+            }
+
+            var mesesTrabalhados = parseInt(prompt("Digite o número de meses trabalhados (até 12):"));
+            if (isNaN(mesesTrabalhados) || mesesTrabalhados < 0 || mesesTrabalhados > 12) {
+                alert("Por favor, insira um número válido de meses (até 12).");
+                return;
+            }
+
+            var decimoTerceiro = (salarioAtual * mesesTrabalhados) / 12;
+            alert("O valor do décimo terceiro é: R$ " + decimoTerceiro.toFixed(2));
+        }
+    </script>
+</head>
+<body>
+    <h1>Calculadora de Salários e Benefícios</h1>
+    <p>Escolha uma opção:</p>
+    <button onclick="calcularNovoSalario()">1. Novo salário</button>
+    <button onclick="calcularValorFerias()">2. Férias</button>
+    <button onclick="calcularDecimoTerceiro()">3. Décimo terceiro</button>
+    <p>4. <a href="#" onclick="alert('Programa encerrado.');">Sair</a></p>
+</body>
+</html>
