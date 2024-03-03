@@ -1,0 +1,1 @@
+Trabalho da disciplina de Lógica de Programação que fiz no 1º semestre da faculdade. O programa é uma calculadora de salários e benefícios de colaboradores de uma empresa. Programado em JavaScript + HTML.
